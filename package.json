@@ -1,0 +1,28 @@
+{
+  "name": "nodejs_csv_upload-issue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run nodemon\" \"npm run tailwind:watch\"",
+    "nodemon": "nodemon index.js",
+    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
+    "tailwind:watch": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css --watch"
+  },
+  "author": "jacek_wiacek",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "csv-parser": "^3.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.16",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
