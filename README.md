@@ -1,5 +1,4 @@
-
-# File Processing Benchmark App
+# File Processing Benchmark App "Node.JS Streams vs readFile demo"
 
 ## Application Overview
 
@@ -13,11 +12,13 @@ This application is designed to compare the `fs.readFile` and `fs.createReadStre
 ## Usage
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Run the application**:
+
    ```bash
    npm start
    ```
@@ -27,13 +28,14 @@ This application is designed to compare the `fs.readFile` and `fs.createReadStre
 
 ## Important Information
 
-The CSV files in the `public` folder are not included and need to be placed there. The required files are:
-- `big.csv`
-- `huge.csv`
-- `micro.csv`
-- `middle1.csv`
-- `middle2.csv`
-- `small.csv`
+The CSV files in the `public` folder are not included and need to be placed there. The required files are (the size values are only suggested as a good example for benchmark and demo purposes, but feel free to modify):
+
+- `micro.csv` <1kB
+- `small.csv` ~61Mb
+- `middle1.csv` ~350Mb
+- `middle2.csv` ~670Mb
+- `big.csv` ~1050Mb
+- `huge.csv` >2GB 
 
 ## License
 
