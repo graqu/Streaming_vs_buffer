@@ -34,6 +34,8 @@ app.post('/', async (req, res) => {
   const csvFileSize = fs.statSync(filePath).size;
   const formattedSize = (csvFileSize / 1000000).toFixed(2);
   const id = uuidv4();
+
+  ////RUN CHOOSEN METHOD
   try {
     await method(filePath, id);
 
@@ -41,6 +43,7 @@ app.post('/', async (req, res) => {
     const loadingTime = succesTime - startTime;
     const processed = req.body.method === 'read' ? loadingTime : null;
 
+    ///SAVE BENCHMARK DATA INTO runningStats Array
     runningStats.push({
       id,
       fileName: csvName,
@@ -49,6 +52,8 @@ app.post('/', async (req, res) => {
       processed,
       method: req.body.method,
     });
+
+    ///RENDER
     res.render('index', {
       method: req.body.method,
       file: req.body.files,
@@ -59,15 +64,17 @@ app.post('/', async (req, res) => {
   } catch (error) {
     console.error('Error loading CSV data:', error);
 
+    ///SAVE FAILURE BENCHMARK DATA INTO runningStats Array
     runningStats.push({
       id,
       fileName: csvName,
       fileSize: formattedSize,
       loadingTime: '<error>',
-      processed: null,
+      processed: '-',
       method: req.body.method,
     });
 
+    ///RENDER
     res.status(500).render('index', {
       method: req.body.method,
       file: req.body.files,

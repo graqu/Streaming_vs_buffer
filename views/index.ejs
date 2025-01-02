@@ -60,6 +60,7 @@
       Load csv file and check opening time:
     </h2>
     <% if (runningStats) { %>
+      <!-- Display all sorted benchmark data - if present. -->
       <% runningStats.toReversed().forEach(function(item) { %>
         <li class="even:bg-blue-50 p-4 text-left min-w-96 list-none">
           <div class="flex">

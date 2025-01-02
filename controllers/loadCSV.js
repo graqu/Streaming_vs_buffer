@@ -36,7 +36,7 @@ const readCsvFromFile = (path, id) => {
 //     }
 //   } catch (error) {
 //     console.error('Error occured with loading file by stream:', error);
-//     reject(error);
+//    return false;
 //   }
 // };
 //STREAM METHOD
